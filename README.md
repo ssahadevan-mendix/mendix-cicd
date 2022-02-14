@@ -1,34 +1,41 @@
-# demo-ci-cd
+# Automation of Build and Deploy to Mendix Cloud
 
-Example of CICD using the Mendix rest api's.
+  Example of automating the build and deploy pipelines using the Mendix rest api's.
 
-It invokes REST-API's in the Mendix cloud. These API's will work for licensed applications in the Mendix Cloud ( hosted platform or Dedicated ).
+  It invokes REST-API's in the Mendix cloud. These API's will work for licensed applications in the Mendix Cloud ( hosted platform or Dedicated ).
 
+
+## To Execute
+    Download or clone this repository
+    Import these files into your Gitlab project.
+    Update env.sh with your username and key
+    Update env.sh AppId, Revision Number, Package Id, Environment
+    Execute your pipleine.
 
 ### .gitlab-ci.yml
-Drives the pipeline in gitlab.
-Invokes other scripts as needed
+    Drives the pipeline in gitlab.
+    Invokes other scripts as needed
 
 
 ### env.sh
-For any environment variables
-Your mendix user name  and mendix-apiKey for authentication are stored here.
+    For any environment variables
+    Your mendix user name  and mendix-apiKey for authentication are stored here.
 
 ### build.sh
-Triggers the build
+    Triggers the build
 
 ### Stop.sh
-Stops the Mendix application that is running in the environment
+    Stops the Mendix application that is running in the environment
 
 ### Transport.sh
-Transports package to the environment
+    Transports package to the environment
 
 ### Start.sh
-Starts the application in the specified environment
+    Starts the application in the specified environment
 
 ### References:
 
-https://docs.mendix.com/howto/integration/implement-cicd-pipeline
-https://docs.mendix.com/apidocs-mxsdk/apidocs/authentication
-https://docs.mendix.com/apidocs-mxsdk/apidocs/build-api
-https://docs.mendix.com/apidocs-mxsdk/apidocs/deploy-api
+    https://docs.mendix.com/howto/integration/implement-cicd-pipeline
+    https://docs.mendix.com/apidocs-mxsdk/apidocs/authentication
+    https://docs.mendix.com/apidocs-mxsdk/apidocs/build-api
+    https://docs.mendix.com/apidocs-mxsdk/apidocs/deploy-api
