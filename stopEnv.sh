@@ -1,6 +1,6 @@
 . ./env.sh
 
-url=https://deploy.mendix.com/api/1/apps/${AppID}/environments/Acceptance/stop
+url=${baseUrl}/api/1/apps/${AppID}/environments/$targetEnvironment/stop
 
 echo "Stopping Environment " $url $AppID $mendixUserName
 
@@ -11,3 +11,4 @@ curl -X POST $url \
 -d '{}' > stop.txt
 
 cat stop.txt
+
