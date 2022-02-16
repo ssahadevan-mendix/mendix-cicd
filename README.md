@@ -21,6 +21,8 @@
     For any environment variables
     Your mendix user name  and mendix-apiKey for authentication are stored here.
 
+    Change baseUrl if you have a dedicated Mendix Cloud
+
 ### build.sh
     Triggers the build
 
