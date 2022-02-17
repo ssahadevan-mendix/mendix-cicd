@@ -37,15 +37,15 @@
 
 ### Pipeline Screenshots
 
-    [Link "Pipleine Screenshots"] ( https://github.com/ssahadevan-mendix/mendix-cicd/wiki/Automation-of-build-and-deploy-to-Mendix-Cloud )
+https://github.com/ssahadevan-mendix/mendix-cicd/wiki/Automation-of-build-and-deploy-to-Mendix-Cloud
 
 ### Mendix Platform Screenshots
 
-    <link>https://github.com/ssahadevan-mendix/mendix-cicd/wiki/Screenshots-of-Mendix-Platform</link>
+https://github.com/ssahadevan-mendix/mendix-cicd/wiki/Screenshots-of-Mendix-Platform
 
 ### References:
 
-    https://docs.mendix.com/howto/integration/implement-cicd-pipeline
-    https://docs.mendix.com/apidocs-mxsdk/apidocs/authentication
-    https://docs.mendix.com/apidocs-mxsdk/apidocs/build-api
-    https://docs.mendix.com/apidocs-mxsdk/apidocs/deploy-api
+https://docs.mendix.com/howto/integration/implement-cicd-pipeline
+https://docs.mendix.com/apidocs-mxsdk/apidocs/authentication
+https://docs.mendix.com/apidocs-mxsdk/apidocs/build-api
+https://docs.mendix.com/apidocs-mxsdk/apidocs/deploy-api
