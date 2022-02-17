@@ -37,7 +37,7 @@
 
 ### Pipeline Screenshots
 
-    <link title="Pipleine Screenshots" href="https://github.com/ssahadevan-mendix/mendix-cicd/wiki/Automation-of-build-and-deploy-to-Mendix-Cloud"</link>
+    [Link "Pipleine Screenshots"] ( https://github.com/ssahadevan-mendix/mendix-cicd/wiki/Automation-of-build-and-deploy-to-Mendix-Cloud )
 
 ### Mendix Platform Screenshots
 
