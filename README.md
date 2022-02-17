@@ -35,9 +35,12 @@
 ### Start.sh
     Starts the application in the specified environment
 
-### Screenshots and additional details
+### Pipeline Screenshots
 
-https://github.com/ssahadevan-mendix/mendix-cicd/wiki/Automation-of-build-and-deploy-to-Mendix-Cloud
+    https://github.com/ssahadevan-mendix/mendix-cicd/wiki/Automation-of-build-and-deploy-to-Mendix-Cloud
+### Mendix Platform Screenshots
+
+    https://github.com/ssahadevan-mendix/mendix-cicd/wiki/Screenshots-of-Mendix-Platform
 
 ### References:
 
