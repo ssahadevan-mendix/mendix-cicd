@@ -37,10 +37,11 @@
 
 ### Pipeline Screenshots
 
-    https://github.com/ssahadevan-mendix/mendix-cicd/wiki/Automation-of-build-and-deploy-to-Mendix-Cloud
+    <link>https://github.com/ssahadevan-mendix/mendix-cicd/wiki/Automation-of-build-and-deploy-to-Mendix-Cloud</link>
+
 ### Mendix Platform Screenshots
 
-    https://github.com/ssahadevan-mendix/mendix-cicd/wiki/Screenshots-of-Mendix-Platform
+    <link>https://github.com/ssahadevan-mendix/mendix-cicd/wiki/Screenshots-of-Mendix-Platform</link>
 
 ### References:
 
