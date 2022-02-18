@@ -14,7 +14,7 @@
 
 ## Sequence Diagram
 
-[Sequence Diagram](Automation- Build and Deploy to Mendix Cloud.png)
+![Sequence Diagram](/images/sequence.png)
 
 Automation- Build and Deploy to Mendix Cloud.png
 ### .gitlab-ci.yml
