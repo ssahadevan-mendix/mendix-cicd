@@ -12,6 +12,11 @@
     Update env.sh AppId, Revision Number, Package Id, Environment
     Execute your pipleine.
 
+## Sequence Diagram
+
+[Sequence Diagram](Automation- Build and Deploy to Mendix Cloud.png)
+
+Automation- Build and Deploy to Mendix Cloud.png
 ### .gitlab-ci.yml
     Drives the pipeline in gitlab.
     Invokes other scripts as needed
