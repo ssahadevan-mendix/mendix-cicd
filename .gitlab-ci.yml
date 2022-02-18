@@ -15,6 +15,7 @@ before_script:
   - echo "For example you might run an update here or install a build dependency"
   - echo "Or perhaps you might print out some debugging details"
   - apk add --no-cache curl
+  - apk add --no-cache jq
   - chmod +x build.sh
 
 after_script:
@@ -30,6 +31,10 @@ build1:
     - . ./build.sh
     - echo "Sleeping for 180s for build to complete"
     - sleep 60
+  artifacts:
+    paths: [output/]
+
+
 
 test1:
   stage: test
@@ -37,20 +42,20 @@ test1:
     - echo "Do a test here"
     - echo "For example run a test suite"
 
-test2:
-  stage: test
-  script:
-    - echo "Do another parallel test here"
-    - echo "For example run a lint test"
 
 deploy1:
   stage: deploy
   script:
+    - echo "See packageId from build phase"
+    - cat output/setPackageId.sh
+    - . output/setPackageId.sh
+    - echo $packageId
     - echo "Do your deploy here"
     - . ./stopEnv.sh 
     - sleep 60
-    - . ./transport.sh
+    - . ./transport.sh $packageId
     - sleep 60 
     - echo "Starting Environment"
     - . ./startEnv.sh 
+
 
