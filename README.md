@@ -4,6 +4,7 @@
 
   It invokes REST-API's in the Mendix cloud. These API's will work for licensed applications in the Mendix Cloud ( hosted platform or Dedicated ).
 
+![Sequence Diagram](/images/sequence.png)
 
 ## To Execute
     Download or clone this repository
@@ -12,11 +13,6 @@
     Update env.sh AppId, Revision Number, Package Id, Environment
     Execute your pipleine.
 
-## Sequence Diagram
-
-![Sequence Diagram](/images/sequence.png)
-
-Automation- Build and Deploy to Mendix Cloud.png
 ### .gitlab-ci.yml
     Drives the pipeline in gitlab.
     Invokes other scripts as needed
