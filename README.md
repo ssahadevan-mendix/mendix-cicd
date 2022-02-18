@@ -1,4 +1,4 @@
-# Automation of Build and Deploy to Mendix Cloud
+# Automation of build and deploy to Mendix Cloud
 
   Example of automating the build and deploy pipelines using the Mendix rest api's.
 
