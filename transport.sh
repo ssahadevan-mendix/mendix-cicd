@@ -1,5 +1,4 @@
-
-
+echo "Transport.sh: $1 is " $1
 packageId=$1
 
 if [ -z ${packageId+x} ]; 
@@ -8,7 +7,7 @@ then
     echo "*** Usage: transport.sh $packageId"
     exit 1 ;
 else 
-    echo "packageId is set to '$var'";
+    echo "packageId is set to '${packageId}'";
  fi
 
 url=${baseUrl}/api/1/apps/${AppID}/environments/$targetEnvironment/transport

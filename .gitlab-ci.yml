@@ -53,6 +53,7 @@ deploy1:
     - echo "Do your deploy here"
     - . ./stopEnv.sh 
     - sleep 60
+    - echo $packageId
     - . ./transport.sh $packageId
     - sleep 60 
     - echo "Starting Environment"
