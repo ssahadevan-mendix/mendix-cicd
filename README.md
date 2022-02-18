@@ -22,6 +22,14 @@
     Your mendix user name  and mendix-apiKey for authentication are stored here.
 
     Change baseUrl if you have a dedicated Mendix Cloud
+          export baseUrl="https://deploy.mendix.com"
+
+    To change the Mendix application , configure AppId in env.sh
+          export AppID="cicd-demo"
+
+    Default setting for targetEnvironment is "Acceptance". This can be changed in env.sh by changing the targetEnvironment variable.
+          export targetEnvironment="Acceptance"
+
 
 ### build.sh
     Triggers the build
