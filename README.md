@@ -4,8 +4,6 @@
 
   It invokes REST-API's in the Mendix cloud. These API's will work for licensed applications in the Mendix Cloud ( hosted platform or Dedicated ).
 
-## Process Diagram
-<div style="width: 640px; height: 480px; margin: 10px; position: relative;"><iframe allowfullscreen frameborder="0" style="width:640px; height:480px" src="https://lucid.app/documents/embeddedchart/a99d2f24-ab3f-4562-9097-6a8186b5a0bf" id="02GU5lT8KeQj"></iframe></div>
 
 ## To Execute
     Download or clone this repository
