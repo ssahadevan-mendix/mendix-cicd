@@ -36,11 +36,11 @@ echo curl -X POST $buildUrl \
 -H "Authorization: MxToken YYYY" \
 -H "Mendix-Username: YYYY" \
 -H "Mendix-Apikey: YYYY" \
--d '{"Branch": "trunk","Version": "0.0.1.'${revision}'","Revision": "'${revision}'", "Description" :  "Git Automated build"}'
+-d '{"branch":"'${branch}'","version": "0.1.'${revision}'","revision": "'${revision}'", "description" :  "Git Automated build"}'
 
 curl -X POST $buildUrl \
 -H "Content-Type: application/json" \
 -H "Authorization: MxToken ${mxToken}" \
 -H "Mendix-Username: ${mendixUserName}" \
 -H "Mendix-Apikey: ${mendixApiKey} " \
--d '{"Branch": "trunk","Version": "0.0.1.'${revision}'","Revision": "'${revision}'", "Description" :  "Git Automated build"}'
+-d '{"branch":"'${branch}'","version": "0.1.'${revision}'","revision": "'${revision}'", "description" :  "Git Automated build"}'
