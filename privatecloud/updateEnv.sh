@@ -3,15 +3,14 @@
 ### Get Namespaces for target cluster ( configured in env.sh )
 
 getClusterUrl="${mxBaseUrl}/clusters"
-#clusterId=$1
-#getJobStatusUrl="${jobsUrl}/${jobId}"
+getEnvUrl="${mxBaseUrl}/apps/${AppIDDemo}/environments"
 
 ###
 ### Function getEnvId()
 ###
 function getEnvId() {
    echo " In getEnvId() "
-   getEnvUrl="${mxBaseUrl}/apps/${AppIDDemo}/environments"
+   #getEnvUrl="${mxBaseUrl}/apps/${AppIDDemo}/environments"
    echo "Getting Environments ... " $getEnvUrl
    listOfEnvironments=$(curl -X GET $getEnvUrl -H "Authorization: MxToken ${mxToken}" -H "Mendix-Username: ${mendixUserName}" -H "Mendix-Apikey: ${mendixApiKey}" | jq -r ".environments[]" )
 
@@ -25,12 +24,55 @@ function getEnvId() {
 
 ###
 ### Function updateEnv
+### Use this to Start and Stop the application by setting the number of Instances in the Manifest
 ###
 function updateEnv() {
    echo " In updateEnv() "
-   curl -X PUT $getEnvUrl -H "Authorization: MxToken ${mxToken}" -H "Mendix-Username: ${mendixUserName}" -H "Mendix-Apikey: ${mendixApiKey}" -d @updatedManifest.json --header "Content-Type: application/json"
+   curl -X PUT $getNsEnvUrl -H "Authorization: MxToken ${mxToken}" -H "Mendix-Username: ${mendixUserName}" -H "Mendix-Apikey: ${mendixApiKey}" -d @updatedManifest.json --header "Content-Type: application/json"
 }
 
+###
+### Function stopApp
+### Use this to Start and Stop the application by setting the number of Instances in the Manifest
+###
+function stopApp() {
+   echo " In stopApp() "
+   cp manifest.json updatedManifest.json
+   numberOfInstances=0
+   sed -i -e 's/"instances":./"instances":'"$numberOfInstances"'/g' updatedManifest.json
+   diff manifest.json updatedManifest.json
+   updateEnv
+}
+
+###
+### Function startApp
+### Use this to Start and Stop the application by setting the number of Instances in the Manifest
+###
+function startApp() {
+   echo " In startApp() "
+   cp manifest.json updatedManifest.json
+   numberOfInstances=1
+   sed -i -e 's/"instances":./"instances":'"$numberOfInstances"'/g' updatedManifest.json
+   diff manifest.json updatedManifest.json
+   updateEnv
+}
+
+###
+### Function CreateEnv
+### Use this to create a new Environment 
+### Nov 30, 2023
+function createEnv() {
+   echo "*** In createEnv()  ***"
+   cp manifest.json createEnvManifest.json
+   echo sed -i -e 's/"name":"'"$targetEnvName"'"/"name":"'"$newEnvName"'"/g' createEnvManifest.json
+   sed -i -e 's/"name":"'"$targetEnvName"'"/"name":"'"$newEnvName"'"/g' createEnvManifest.json
+   newEnvId=mxdv$$
+   echo "createEnv: env Id is " $envId ",newEnvId is " newEnvId
+   echo sed -i -e 's/"id":"'"$envId"'"/"id":"'"$newEnvId"'"/g' createEnvManifest.json
+   sed -i -e 's/"id":"'"$envId"'"/"id":"'"$newEnvId"'"/g' createEnvManifest.json
+   diff manifest.json createEnvManifest.json
+   curl -X POST $getEnvUrl -H "Authorization: MxToken ${mxToken}" -H "Mendix-Username: ${mendixUserName}" -H "Mendix-Apikey: ${mendixApiKey}" -d @createEnvManifest.json --header "Content-Type: application/json"
+}
 
 
 echo "Getting clusters ..." $getClusterUrl
@@ -63,18 +105,20 @@ do
 
      getEnvId 
 
-     getEnvUrl="${mxBaseUrl}/apps/${AppIDDemo}/namespaces/${namespaceId}/environments/${envId}"
-     echo "Getting Environments ... " $getEnvUrl
-     listOfEnvironments=$(curl -X GET $getEnvUrl -H "Authorization: MxToken ${mxToken}" -H "Mendix-Username: ${mendixUserName}" -H "Mendix-Apikey: ${mendixApiKey}" )
+     getNsEnvUrl="${mxBaseUrl}/apps/${AppIDDemo}/namespaces/${namespaceId}/environments/${envId}"
+     echo "Getting Environments ... " $getNsEnvUrl
+     listOfEnvironments=$(curl -X GET $getNsEnvUrl -H "Authorization: MxToken ${mxToken}" -H "Mendix-Username: ${mendixUserName}" -H "Mendix-Apikey: ${mendixApiKey}" )
 
      echo $listOfEnvironments 2>&1 | tee manifest.json
 
 
-     cp manifest.json updatedManifest.json
-     numberOfInstances=0
-     sed -i -e 's/"instances":1/"instances":'"$numberOfInstances"'/g' updatedManifest.json
-     diff manifest.json updatedManifest.json
-     updateEnv 
+     stopApp
+
+     createEnv
+
+     sleep 5
+
+     startApp
 
 
   fi
