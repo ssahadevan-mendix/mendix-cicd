@@ -126,11 +126,11 @@ do
      echo $listOfEnvironments 2>&1 | tee manifest.json
 
 
-     stopApp
+     #stopApp
 
      #createEnv
 
-     sleep 10
+     #sleep 20
 
      startApp
 

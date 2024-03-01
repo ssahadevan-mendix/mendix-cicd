@@ -130,11 +130,6 @@ do
 
      #createEnv
 
-     sleep 10
-
-     startApp
-
-
   fi
 
 done <<< $clusterIds
